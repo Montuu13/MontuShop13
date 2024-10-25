@@ -1,0 +1,231 @@
+<html>
+ <head>
+  <title>MONTU SHOP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+ </head>
+ <body class="font-roboto bg-gray-100">
+  <div class="max-w-md mx-auto bg-white">
+   <!-- Search Bar -->
+   <div class="flex items-center p-2 bg-white shadow">
+    <input class="flex-grow p-2 border rounded-md" placeholder="Cari produk..." type="text"/>
+    <img src="https://fakeimg.pl/50x50?text=MONTU〽️" alt="Foto Banner" class="ml-2 w-10 h-10 rounded-full">
+   </div>
+   
+   <!-- Navigation Icons -->
+   <div class="grid grid-cols-5 gap-4 p-4 bg-white">
+    <div class="flex flex-col items-center cursor-pointer" onclick="showOrderForm()">
+     <div class="p-4 bg-blue-100 rounded-full">
+      <i class="fas fa-cog text-blue-600"></i>
+     </div>
+     <span class="mt-2 text-sm">PANEL BOT</span>
+    </div>
+    <div class="flex flex-col items-center cursor-pointer" onclick="showHostingOptions()">
+     <div class="p-4 bg-blue-100 rounded-full">
+      <i class="fas fa-server text-blue-600"></i>
+     </div>
+     <span class="mt-2 text-sm">HOSTING SA-MP</span>
+    </div>
+    <div class="flex flex-col items-center cursor-pointer" onclick="showSCBOTOptions()">
+     <div class="p-4 bg-blue-100 rounded-full">
+      <i class="fas fa-list text-blue-600"></i>
+     </div>
+     <span class="mt-2 text-sm">LIST SC BOT</span>
+    </div>
+    <div class="flex flex-col items-center cursor-pointer" onclick="showQRISPage()">
+     <div class="p-4 bg-blue-100 rounded-full">
+      <i class="fas fa-qrcode text-blue-600"></i>
+     </div>
+     <span class="mt-2 text-sm">QRIS</span>
+    </div>
+    <div class="flex flex-col items-center cursor-pointer" onclick="showOtherProducts()">
+     <div class="p-4 bg-blue-100 rounded-full">
+      <i class="fas fa-ellipsis-h text-blue-600"></i>
+     </div>
+     <span class="mt-2 text-sm">Lainnya</span>
+    </div>
+   </div>
+   
+   <!-- Panel BOT Order Form (Hidden by Default) -->
+   <div id="order-form" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">Order Panel BOT</h2>
+    <form>
+     <label class="block mt-2">
+      <span>Nama:</span>
+      <input class="w-full p-2 border rounded" type="text" placeholder="Masukkan nama"/>
+     </label>
+     <label class="block mt-2">
+      <span>Pilih Produk:</span>
+      <select class="w-full p-2 border rounded">
+       <option>1GB - Rp1,000</option>
+       <option>2GB - Rp2,000</option>
+       <option>3GB - Rp3,000</option>
+       <option>4GB - Rp4,000</option>
+       <option>5GB - Rp5,000</option>
+       <option>6GB - Rp6,000</option>
+       <option>7GB - Rp7,000</option>
+       <option>8GB - Rp8,000</option>
+       <option>9GB - Rp9,000</option>
+       <option>10GB - Rp10,000</option>
+       <option>Unli - Rp11,000</option>
+      </select>
+     </label>
+     <button class="w-full mt-4 p-2 bg-blue-600 text-white rounded" type="button" onclick="showPembayaran()">Order</button>
+    </form>
+   </div>
+   
+   <!-- Hosting SA-MP Options (Hidden by Default) -->
+   <div id="hosting-options" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">Hosting SA-MP</h2>
+    <ul class="mt-4 space-y-2">
+     <li class="border p-2 rounded">HOSTING UNLI 100 SLOT - Rp5,000</li>
+     <li class="border p-2 rounded">HOSTING UNLI 120 SLOT - Rp6,000</li>
+     <li class="border p-2 rounded">HOSTING UNLI 150 SLOT - Rp7,000</li>
+       </select>
+     </label>
+     <button class="w-full mt-4 p-2 bg-blue-600 text-white rounded" type="button" onclick="showPembayaran()">Order</button>
+    </form>
+   </div>
+   
+   <!-- List SC BOT Options (Hidden by Default) -->
+   <div id="scbot-options" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">List SC BOT</h2>
+    <ul class="mt-4 space-y-2">
+     <li class="border p-2 rounded">SC JPM - Rp10,000</li>
+     <li class="border p-2 rounded">SC PUSHKONTK ANTI KENON - Rp10,000</li>
+     <li class="border p-2 rounded">SC JPM × CPANEL - Rp15,000</li>
+     <li class="border p-2 rounded">SC PRIBADI MONTU - Rp20,000</li>
+     </select>
+     </label>
+     <button class="w-full mt-4 p-2 bg-blue-600 text-white rounded" type="button" onclick="showPembayaran()">Order</button>
+    </form>
+   </div>
+   
+   <!-- Other Products Popup (Hidden by Default) -->
+   <div id="other-products" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">Produk Lainnya</h2>
+    <img src="https://via.placeholder.com/50" alt="Logo" class="mx-auto w-20 h-20 rounded-full mt-4"/>
+    <ul class="mt-4 space-y-2">
+     <li class="border p-2 rounded">JASA RINAME SC 7K</li>
+     <li class="border p-2 rounded">JASA INSTALL PANEL 10K</li>
+     <li class="border p-2 rounded">JASA INSTALL THEMA PANEL 5K</li>
+     <li class="border p-2 rounded">ADMIN PANEL PUBLIK 5K 1 BULAN</li>
+     <li class="border p-2 rounded">ADMIN PANEL PUBLIK 10K PERMANEN/li>
+     <li class="border p-2 rounded">ADMIN PANEL PRIVATE 10K 1 BULAN</li>
+     <li class="border p-2 rounded">ADMIN PANEL PRIVATE 15K PERMANEN</li>
+     <li class="border p-2 rounded">PT PANEL 20K</li>
+     <li class="border p-2 rounded">OWNER PANEL 30K</li>
+    </ul>
+    <a href="https://wa.me/6287760185040" class="mt-4 block text-center text-blue-600">Hubungi: 6287760185040</a>
+   </div>
+   
+   <!-- QRIS Page (Hidden by Default) -->
+   <div id="qris-page" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">QRIS</h2>
+    <p class="mt-2">Scan QRIS Merchant untuk melakukan pembayaran:</p>
+    <img src="https://i.ibb.co.com/S7NWfPf/599335fcfe2fcb1e10526392bacc1799a70b8b9468079cb03196b8459001e96f-3971.png" alt="QRIS" class="w-full mt-4 rounded"/>
+    <p class="mt-2 text-gray-600">QRIS ini merupakan QRIS merchant resmi yang dapat digunakan oleh semua pengguna.</p>
+    <button class="w-full mt-4 p-2 bg-blue-600 text-white rounded" onclick="showTarikSaldo()">Tarik Saldo</button>
+   </div>
+   
+   <!-- Tarik Saldo Form (Hidden by Default) -->
+   <div id="tarik-saldo" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">Tarik Saldo</h2>
+    <form>
+     <label class="block mt-2">
+      <span>Jumlah:</span>
+      <input class="w-full p-2 border rounded" type="number" placeholder="Masukkan jumlah saldo"/>
+     </label>
+     <a href="https://wa.me/6287760185040?text=Mau%20tarik%20uang%20sejumlah%20[isi jumlah]" class="w-full mt-4 p-2 bg-green-600 text-white rounded text-center block">Tarik Sekarang</a>
+    </form>
+   </div>
+   
+   <!-- Payment Section (Hidden by Default) -->
+   <div id="pembayaran-section" class="p-4 bg-white mt-4 hidden">
+    <h2 class="text-lg font-semibold">Pembayaran</h2>
+    <div class="flex justify-around mt-4">
+     <button class="w-1/2 p-2 bg-blue-600 text-white rounded" onclick="showQRIS()">TRX Otomatis</button>
+     <a href="https://wa.me/6287760185040?text=Ingin%20melakukan%20pembelian%20melalui%20TRX%20Manual" 
+        class="w-1/2 p-2 bg-green-600 text-white rounded text-center ml-2">TRX Manual</a>
+    </div>
+    <div id="qris-section" class="mt-4 hidden">
+     <p class="mt-2">TRX Otomatis</p>
+     <div class="flex justify-center items-center mt-4">
+      <div class="border p-4 rounded">
+       <p class="text-center text-lg font-semibold">QRIS</p>
+       <img src="https://i.ibb.co.com/S7NWfPf/599335fcfe2fcb1e10526392bacc1799a70b8b9468079cb03196b8459001e96f-3971.png" alt="QRIS"/>
+       <p class="text-center text-red-600 mt-2">Sisa Waktu: <span id="timer">5:00</span></p>
+      </div>
+     </div>
+    </div>
+   </div>
+   
+   <!-- Footer Navigation -->
+   <div class="flex justify-around p-4 bg-white shadow mt-4">
+    <div class="flex flex-col items-center text-green-600">
+     <i class="fas fa-home text-xl"></i>
+     <span class="text-xs">Beranda</span>
+    </div>
+    <div class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-receipt text-xl"></i>
+     <span class="text-xs">Pesanan</span>
+    </div>
+    <div class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-comments text-xl"></i>
+     <span class="text-xs">Chat</span>
+    </div>
+    <div class="flex flex-col items-center text-gray-600">
+     <i class="fas fa-user text-xl"></i>
+     <span class="text-xs">Akun</span>
+    </div>
+   </div>
+   
+   <!-- OJK and App Description -->
+   <footer class="p-4 bg-white text-center text-gray-600 mt-4 text-sm">
+    <p>Web ini dilindungi oleh OJK. Aplikasi aman 100%.</p>
+   </footer>
+   
+   <script>
+    function showOrderForm() {
+     document.getElementById('order-form').classList.remove('hidden');
+     document.getElementById('hosting-options').classList.add('hidden');
+     document.getElementById('scbot-options').classList.add('hidden');
+     document.getElementById('other-products').classList.add('hidden');
+     document.getElementById('qris-page').classList.add('hidden');
+    }
+    
+    function showHostingOptions() {
+     document.getElementById('hosting-options').classList.remove('hidden');
+     document.getElementById('order-form').classList.add('hidden');
+    }
+    
+    function showSCBOTOptions() {
+     document.getElementById('scbot-options').classList.remove('hidden');
+     document.getElementById('order-form').classList.add('hidden');
+    }
+    
+    function showOtherProducts() {
+     document.getElementById('other-products').classList.remove('hidden');
+     document.getElementById('order-form').classList.add('hidden');
+    }
+    
+    function showQRISPage() {
+     document.getElementById('qris-page').classList.remove('hidden');
+     document.getElementById('order-form').classList.add('hidden');
+    }
+    
+    function showPembayaran() {
+     document.getElementById('pembayaran-section').classList.remove('hidden');
+    }
+    
+    function showQRIS() {
+     document.getElementById('qris-section').classList.remove('hidden');
+    }
+    
+    function showTarikSaldo() {
+     document.getElementById('tarik-saldo').classList.remove('hidden');
+    }
+   </script>
+ </body>
+</html>
